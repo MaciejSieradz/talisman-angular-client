@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 import {Deck} from "../models/deck";
 import {DeckStatistics} from "../models/deck-statistics";
 
-const DEFAULT_PATH = "talisman-resource-server-production.up.railway.app/api";
+const DEFAULT_PATH = "https://talisman-resource-server-production.up.railway.app/api";
 
 @Injectable({
   providedIn: 'root'
