@@ -1,0 +1,38 @@
+<h1 class="text-3xl text-gray pb-4">{{title}}</h1>
+<div class="flex flex-row justify-center space-x-4">
+  <div class="w-1/3 bg-white p-4 rounded-xl drop-shadow-md">
+    <h2 class="py-4">Ilość unikalnych kart: {{deckStatisticsUnique.numberOfCards}}</h2>
+    <app-deck-base-statistics-pie-chart [data]="deckStatisticsUnique"></app-deck-base-statistics-pie-chart>
+  </div>
+
+  <div class="w-1/3 bg-white p-4 rounded-xl drop-shadow-md">
+    <h2 class="py-4">Ilość wszystkich kart: {{deckStatisticsAll.numberOfCards}}</h2>
+    <app-deck-base-statistics-pie-chart [data]="deckStatisticsAll"></app-deck-base-statistics-pie-chart>
+  </div>
+</div>
+<div class="px-8">
+  <table class="w-full my-8 text-center bg-white rounded-xl drop-shadow-md text-gray py-2">
+    <thead class="bg-light-gray">
+      <tr class="text-lg">
+        <th class="rounded-tl-xl">Nazwa karty</th>
+        <th>Typ</th>
+        <th>Podtyp</th>
+        <th>Statystyka walki</th>
+        <th>Skuteczność walki</th>
+        <th>Numer spotkania</th>
+        <th class="rounded-tr-xl">Ilość kopii</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let card of deck?.cards" class="border-b border-b-very-light-gray">
+        <td>{{card.name}}</td>
+        <td>{{card.type}}</td>
+        <td>{{card.subtype}}</td>
+        <td>{{card.fight_statistic}}</td>
+        <td>{{card.fight_power}}</td>
+        <td>{{card.meeting_number}}</td>
+        <td>{{card.number_of_copies}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
