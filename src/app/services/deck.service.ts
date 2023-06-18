@@ -18,7 +18,7 @@ export class DeckService {
   }
 
   getDeckFromName(nameOfDeck: string): Observable<Deck> {
-    return this.http.get<Deck>(DEFAULT_PATH + "/decks" + nameOfDeck);
+    return this.http.get<Deck>(DEFAULT_PATH + "/decks/" + nameOfDeck);
   }
 
   getBasicStatisticsFromUniqueCardsFromAllDecks(): Observable<DeckStatistics> {
