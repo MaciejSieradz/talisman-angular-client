@@ -55,8 +55,6 @@ export class DeckBaseStatisticsPieChartComponent implements OnInit, OnChanges{
 
   ngOnInit() {
     this.chart?.update();
-
-    console.log(this.data?.numberOfCards)
   }
 
   ngOnChanges(changes: SimpleChanges) {
