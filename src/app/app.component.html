@@ -1,5 +1,7 @@
-<div class="flex flex-row space-x-4">
-  <app-menu class="w-48 mr-6"></app-menu>
+<div class="fixed w-full inset-0 bg-black z-10" [ngClass]="isMenuVisible ? 'bg-opacity-30' : 'hidden'"></div>
+
+<div class="flex flex-row lg:space-x-4 static">
+  <app-menu (menuButtonClicked)="changeMenuVisibility($event)" class="order-last w-0 lg:order-first lg:w-48 lg:mr-6"></app-menu>
   <div class="w-full pt-4">
     <router-outlet></router-outlet>
   </div>

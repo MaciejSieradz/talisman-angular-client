@@ -1,0 +1,96 @@
+<h1 class="text-3xl text-gray pb-4 text-center lg:text-left">{{title}}</h1>
+<div class="flex flex-col justify-center mx-4 items-center space-y-4 my-8 lg:grid lg:grid-cols-4 lg:w-11/12 lg:gap-8
+    lg:px-28 lg:my-0 lg:space-y-0 lg:mb-20">
+
+  <button class="w-full lg:order-4 lg:h-full">
+    <div class="w-full bg-white p-4 rounded-xl drop-shadow-md text-gray hover:bg-gray hover:text-light-gray lg:h-full lg:flex lg:items-center lg:justify-center">
+      Przejdź do strony z kartami
+    </div>
+  </button>
+
+  <div class="w-full bg-white p-4 rounded-xl drop-shadow-md text-center text-gray lg:order-1">
+    <p>Ilość unikalnych kart</p>
+    <p class="text-xl font-semibold">{{deckStatisticsUnique.numberOfCards}}</p>
+  </div>
+
+  <div class="w-full bg-white p-4 rounded-xl drop-shadow-md text-center text-gray lg:order-2">
+    <p>Ilość wszystkich kart</p>
+    <p class="text-xl font-semibold">{{deckStatisticsAll.numberOfCards}}</p>
+  </div>
+
+  <div class="w-full bg-white p-4 rounded-xl drop-shadow-md text-center text-gray lg:order-3">
+    <p>Ilość wszystkich wrogów</p>
+    <p class="text-xl font-semibold">{{enemiesStatistics.numberOfEnemies}}</p>
+  </div>
+
+
+
+  <div class="w-full bg-white p-4 rounded-xl drop-shadow-md lg:w-full lg:col-span-2 lg:order-5">
+    <app-deck-base-statistics-pie-chart [data]="deckStatisticsUnique"></app-deck-base-statistics-pie-chart>
+  </div>
+
+  <div class="w-full bg-white p-4 rounded-xl drop-shadow-md lg:w-full lg:col-span-2 lg:order-6">
+    <app-deck-base-statistics-pie-chart [data]="deckStatisticsAll"></app-deck-base-statistics-pie-chart>
+  </div>
+
+  <div class="w-full bg-white p-4 rounded-xl drop-shadow-md  lg:w-full lg:col-span-2 lg:order-7">
+    <app-deck-base-statistics-bar-chart [data]="enemiesStatistics"></app-deck-base-statistics-bar-chart>
+  </div>
+
+  <div class="flex flex-col w-full space-y-4 lg:order-8 lg:col-span-2 lg:items-center">
+
+    <div class="space-y-4 lg:flex lg:flex-row lg:space-x-5 lg:space-y-0">
+      <div class="w-full bg-white p-4 rounded-xl drop-shadow-md lg:w-fit">
+        <p class="text-xl text-gray font-semibold text-center">Średnia siła wrogów</p>
+
+        <div class="flex flex-row items-center justify-center space-x-16 lg:order-9">
+          <div class="flex flex-col items-center justify-center">
+            <p class="font-semibold text-xl">{{enemiesStatistics.averageEnemyStrength | number }}</p>
+            <p class="text-sm">Siła</p>
+          </div>
+
+          <div class="flex flex-col items-center justify-center lg:order-10">
+            <p class="font-semibold text-xl">{{enemiesStatistics.averageEnemyPower | number}}</p>
+            <p class="text-sm">Moc</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full bg-white p-4 rounded-xl drop-shadow-md lg:w-fit">
+        <p class="text-xl text-gray font-semibold text-center">Minimalna siła wrogów</p>
+
+        <div class="flex flex-row items-center justify-center space-x-16">
+          <div class="flex flex-col items-center justify-center">
+            <p class="font-semibold text-xl">{{enemiesStatistics.minEnemyStrength | number }}</p>
+            <p class="text-sm">Siła</p>
+          </div>
+
+          <div class="flex flex-col items-center justify-center">
+            <p class="font-semibold text-xl">{{enemiesStatistics.minEnemyPower | number}}</p>
+            <p class="text-sm">Moc</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full bg-white p-4 rounded-xl drop-shadow-md lg:w-fit">
+      <p class="text-xl text-gray font-semibold text-center">Maksymalna siła wrogów</p>
+
+      <div class="flex flex-row items-center justify-center space-x-16">
+        <div class="flex flex-col items-center justify-center">
+          <p class="font-semibold text-xl">{{enemiesStatistics.maxEnemyStrength | number }}</p>
+          <p class="text-sm">Siła</p>
+        </div>
+
+        <div class="flex flex-col items-center justify-center">
+          <p class="font-semibold text-xl">{{enemiesStatistics.maxEnemyPower | number}}</p>
+          <p class="text-sm">Moc</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full bg-white p-4 rounded-xl drop-shadow-md  lg:w-full lg:col-span-2 lg:order-7">
+    <app-bar-chart></app-bar-chart>
+  </div>
+</div>

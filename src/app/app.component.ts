@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'talisman-angular-client';
+  title = 'Talisman Statistics';
+
+  isMenuVisible = false;
+
+  changeMenuVisibility(isOpen: boolean) {
+    this.isMenuVisible = isOpen;
+  }
 }
